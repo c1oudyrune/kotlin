@@ -310,7 +310,7 @@ class MenuController(private val repository: TaskRepository) {
 
         val priority = selectPriority("Выберите приоритет для фильтрации (или Enter, чтобы пропустить)")
 
-        // Запрашиваем статус выполнения, если не указан query и priority
+        
         val isDone: Boolean? = if (query == null && priority == null) {
             selectDoneStatus("Искать выполненные задачи? (true/false, или Enter, чтобы пропустить)")
         } else {
@@ -521,7 +521,7 @@ class MenuController(private val repository: TaskRepository) {
         val titleMaxWidth = 40 
         val dateWidth = 16 
 
-        // Формируем заголовки таблицы.
+        
         val header = String.format("| %-${idWidth}s | %-${priorityWidth}s | %-${doneWidth}s | %-${titleMaxWidth}s | %-${dateWidth}s |",
             "ID", "Priority", "Done", "Title")
         val separator = "-".repeat(header.length)
